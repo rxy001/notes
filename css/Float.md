@@ -28,7 +28,7 @@
 
 1. 浮动元素最后添加 `<div style="clear: both"></div>`
 
-2. 父元素添加 `overflow: auto` 或者其它除默认的 `overflow: visible` 以外的值
+2. 父元素添加 `overflow: auto` 或者其它除默认的 `overflow: visible` 以外的值（BFC）
 
 3. 
 
