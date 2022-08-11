@@ -8,3 +8,13 @@
 
 可通过 `reflog` 找回撤销的 commit 。
 
+
+
+#### revert
+
+`git revert` 撤销 某次操作，此次操作之前和之后的 commit 和 history 都会保留，并且把这次撤销作为一次最新的提交。
+
+`git revert HEAD `:  撤销前一次 commit。
+
+`git revert HEAD^`: 撤销前前一次 commit
+

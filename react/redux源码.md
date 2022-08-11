@@ -59,6 +59,7 @@ function createStore(reducer, preloadState, enhancer) {
       currentListeners = null
     }
   }
+  
   function dispatch(action) {
     if (Object.prototype.toString.call(action) !== '[object Object]') return
 
