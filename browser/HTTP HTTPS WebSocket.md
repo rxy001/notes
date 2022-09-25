@@ -8,7 +8,7 @@
 
 
 
-**HTTPS** （安全的*HTTP*）是 [HTTP](https://developer.mozilla.org/zh-CN/docs/Glossary/HTTP) 协议的加密版本。它通常使用 [SSL](https://developer.mozilla.org/zh-CN/docs/Glossary/SSL) 或者 [TLS](https://developer.mozilla.org/zh-CN/docs/Glossary/TLS) 来加密客户端和服务器之间所有的通信。这安全的链接允许客户端与服务器安全地交换敏感的数据，例如网上银行或者在线商城等涉及金钱的操作。
+**HTTPS** （安全的*HTTP*）是 [HTTP](https://developer.mozilla.org/zh-CN/docs/Glossary/HTTP) 协议的加密版本。它通常使用 [TLS](https://developer.mozilla.org/zh-CN/docs/Glossary/TLS) 来加密客户端和服务器之间所有的通信。这安全的链接允许客户端与服务器安全地交换敏感的数据，例如网上银行或者在线商城等涉及金钱的操作。
 
 
 

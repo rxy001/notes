@@ -59,7 +59,7 @@ function Handler(promise, onFulfilled, onRejected) {
   this.promise = promise;
 }
 
-  Promise.prototype.then = function (onFulfilled, onRejected) {
+Promise.prototype.then = function (onFulfilled, onRejected) {
   const promise = new Promise(noop);
 
   handler(this, new Handler(promise, onFulfilled, onRejected));

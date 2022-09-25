@@ -57,7 +57,7 @@ function config(webpackEnv) {
     optimization: {
       // 告知 webpack 当选择模块 id 时需要使用哪种算法，有易于缓存。
       // module id 会默认地基于解析顺序进行增量。
-      // 默认值就是 deterministic
+      // 默认值: deterministic 被哈希转化成的小位数值模块名。
       moduleIds: "deterministic",
       // 代码分割
       splitChunks: {
@@ -68,7 +68,7 @@ function config(webpackEnv) {
       runtimeChunk: "single",
       // 告知 webpack 去辨识 package.json 中的 副作用 标记或规则，
       // 以跳过那些当导出不被使用且被标记不包含副作用的模块。
-      //https://webpack.docschina.org/configuration/optimization/#optimizationsideeffects
+      // https://webpack.docschina.org/configuration/optimization/#optimizationsideeffects
       sideEffects: true,
       // usedExports providedExports: tree shaking 相关的属性
       // https://webpack.docschina.org/guides/tree-shaking/
