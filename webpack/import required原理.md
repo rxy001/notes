@@ -1,6 +1,6 @@
 通过分析 webpack 编译出的 bundle 文件，研究下 webpack 是如何支持`esModules`和`commonjs`
 
-```
+```js
 // webpack.config.js
 const path = require('path');
 
@@ -36,7 +36,7 @@ exports.c = 3
 
 运行`webpack --config webpack.base.config.js`
 
-```
+```js
 // dist/main.js 的大概结构：
 
 
@@ -68,7 +68,7 @@ exports.c = 3
 
 调用`__webpack_require__(0)`加载 id 为 0 的模块
 
-```
+```js
 // The require function
  	function __webpack_require__(moduleId) {
 
@@ -96,7 +96,7 @@ exports.c = 3
 
 创建一个新的`module`，来兼容`commonjs`和`esModule`导出的数据。如何兼容，看下转译后三个模块就明白了
 
-```
+```js
     /* 1 */
     /***/ function(module, __webpack_exports__, __webpack_require__) {
       'use strict'
@@ -122,7 +122,7 @@ exports.c = 3
 
 接上文执行`modules[moduleId].call(module.exports, module, module.exports, __webpack_require__)`
 
-```
+```js
 function(module, __webpack_exports__, __webpack_require__) {
     'use strict'
     __webpack_require__.r(__webpack_exports__)

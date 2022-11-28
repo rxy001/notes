@@ -1,4 +1,4 @@
-**HTTP（超文本传输协议）**是一个用于传输超媒体文档（例如 HTML）的[应用层](https://en.wikipedia.org/wiki/Application_Layer)协议，通常是基于 tcp/ip 协议之上。HTTP 遵循[客户端 - 服务端模型](https://en.wikipedia.org/wiki/Client–server_model)，客户端发出请求，然后等待直到收到服务器端响应。
+**HTTP（超文本传输协议）** 是一个用于传输超媒体文档（例如 HTML）的[应用层](https://en.wikipedia.org/wiki/Application_Layer)协议，通常是基于 tcp/ip 协议之上。HTTP 遵循[客户端 - 服务端模型](https://en.wikipedia.org/wiki/Client–server_model)，客户端发出请求，然后等待直到收到服务器端响应。
 
 特点：
 
@@ -15,9 +15,9 @@
 
 **请求方式：** head、get、post、put、delete、trace、options、patch
 
-**三次握手作用: ** 第一次握手，S 只可以确认自己可以接受 C 发送的报文。第二次握手，C 可以确认 S 收到了自己发送的报文，并且可以确认自己可以接受 S 发送的报文。第三次握手，S 可以确认 C 收到了自己发送的报文
+**三次握手作用:** 第一次握手，S 只可以确认自己可以接受 C 发送的报文。第二次握手，C 可以确认 S 收到了自己发送的报文，并且可以确认自己可以接受 S 发送的报文。第三次握手，S 可以确认 C 收到了自己发送的报文
 
-**WebSocket ** 是 HTML5 提出的一种在单个 TCP 连接上进行全双工通信的协议,允许服务端主动向客户端推送数据。在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。
+**WebSocket** 是 HTML5 提出的一种在单个 TCP 连接上进行全双工通信的协议,允许服务端主动向客户端推送数据。在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。
 
 向下兼容：
 
