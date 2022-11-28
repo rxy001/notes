@@ -46,9 +46,9 @@
       2. 它不能能在 `promise` 被 `rejected` 之前调用。
       3. 它不能被调用多次。
 
-   4. 当执行上下文栈只包含平台代码， `onFulfilled`  或者  `onRejected`  不能被调用[^1]
+   4. 当执行上下文栈只包含平台代码， `onFulfilled` 或者 `onRejected` 不能被调用[^1]
 
-   5. `onFulfilled`  或者  `onRejected` 必须以函数形式调用（即不能有`this`值）[^2]
+   5. `onFulfilled` 或者 `onRejected` 必须以函数形式调用（即不能有`this`值）[^2]
 
    6. `then` 方法可以被同一个 `promise` 调用多次。
 
@@ -83,20 +83,18 @@
       ```js
       const promise1 = new Promise(function (res, rej) {
         setTimeout(() => {
-          rej('error');
+          rej("error");
         }, 3000);
       });
-      
+
       const promise2 = new Promise((res, rej) => {
         setTimeout(() => {
           res(promise1);
         }, 1000);
-      })
-      
+      });
+
       // promise2 <rejected>: error
       ```
-
-      
 
    3. 如果 `x` 是一个对象或者函数。
 
@@ -106,23 +104,19 @@
 
          ```js
          const obj = {};
-         
+
          Object.defineProperty(obj, "then", {
-         	get: () => {
-         		throw "error";
-         	},
+           get: () => {
+             throw "error";
+           },
          });
-         
+
          const promise = new Promise((res, rej) => {
-         	res(obj);
+           res(obj);
          });
-         
+
          // promise <rejected>: 'error'
          ```
-
-         
-
-         
 
       3. 如果 `then` 是一个函数，以 `x` 作为 `this` 调用它，传入第一个参数 `resolvePromise` ， 第二个参数 `rejectPromise` 。
 
@@ -135,36 +129,33 @@
 
          ```js
          // 可分别测试 1、2、3、4 情况
-         
+
          const obj = {
            then(res, rej) {
              console.log(this);
              res("value1");
              res("value2");
-             rej("reason")
-             throw 'error'
+             rej("reason");
+             throw "error";
            },
          };
-         
+
          const promise = new Promise((res, rej) => {
            res(obj);
          });
-         
          ```
-
-         
 
       4. 如果 `then` 不是一个函数，以 `x` 作为 value 让 `promise` 变成 fulfilled 状态。
 
    4. 如果 `x` 不是对象或函数， 以 `x` 作为 value 让 `promise` 变成 fulfilled 状态。
 
-如果一个 promise 被一个循环的 thenable 链中的对象 resolved，而  `[[Resolve]](promise, thenable)`  的递归性质又使得其被再次调用，根据上述的算法将会陷入无限递归之中。算法虽不强制要求，但也鼓励实现者检测这样的递归是否存在，并且以 `TypeError` 作为 reason 拒绝 promise [^6]。
+如果一个 promise 被一个循环的 thenable 链中的对象 resolved，而 `[[Resolve]](promise, thenable)` 的递归性质又使得其被再次调用，根据上述的算法将会陷入无限递归之中。算法虽不强制要求，但也鼓励实现者检测这样的递归是否存在，并且以 `TypeError` 作为 reason 拒绝 promise [^6]。
 
 #### 3. 备注
 
-[^1]:这里的**平台代码**指的是引擎、环境以及 promise 实现代码。实践中要确保  `onFulfilled`  和  `onRejected`  方法异步执行，且应该在  `then`  方法被调用的事件循环之后及新执行栈中执行。这可以通过 “macro-task” 或者 “micro-task” 来实现。由于 promise 的实现本身就是平台代码，因此 handler 在调用时可能包含一个任务调度队列。
-[^2]:也就是说在**严格模式（strict）**中，函数  `this`  的值为  `undefined` ；在非严格模式中其为全局对象。
-[^3]:代码实现在满足所有要求的情况下可以允许  `promise2 === promise1` 。每个实现都要文档说明其是否允许以及在何种条件下允许  `promise2 === promise1` 。
-[^4]:总体来说，只有  `x`  符合当前实现，我们才认为它是真正的  promise 。这一规则允许使用特殊实现来接受符合已知要求的 promises 状态。
-[^5]:这步我们先是存储了一个指向  `x.then`  的引用，然后测试并调用该引用，以避免多次访问  `x.then`  属性。这样的预防措施在面对访问器属性的确保一致性很重要，访问器属性的值可能会在检索期间发生变化。
-[^6]: 实现不应该对  *thenable*  链的深度随意设限，并假定超出该限制的递归就是无限循环。只有真正的循环递归才应能导致  `TypeError`  异常；如果无限长的链上  *thenable*  均不相同，循环永远是正确的行为。
+[^1]: 这里的**平台代码**指的是引擎、环境以及 promise 实现代码。实践中要确保 `onFulfilled` 和 `onRejected` 方法异步执行，且应该在 `then` 方法被调用的事件循环之后及新执行栈中执行。这可以通过 “macro-task” 或者 “micro-task” 来实现。由于 promise 的实现本身就是平台代码，因此 handler 在调用时可能包含一个任务调度队列。
+[^2]: 也就是说在**严格模式（strict）**中，函数 `this` 的值为 `undefined` ；在非严格模式中其为全局对象。
+[^3]: 代码实现在满足所有要求的情况下可以允许 `promise2 === promise1` 。每个实现都要文档说明其是否允许以及在何种条件下允许 `promise2 === promise1` 。
+[^4]: 总体来说，只有 `x` 符合当前实现，我们才认为它是真正的 promise 。这一规则允许使用特殊实现来接受符合已知要求的 promises 状态。
+[^5]: 这步我们先是存储了一个指向 `x.then` 的引用，然后测试并调用该引用，以避免多次访问 `x.then` 属性。这样的预防措施在面对访问器属性的确保一致性很重要，访问器属性的值可能会在检索期间发生变化。
+[^6]: 实现不应该对 _thenable_ 链的深度随意设限，并假定超出该限制的递归就是无限循环。只有真正的循环递归才应能导致 `TypeError` 异常；如果无限长的链上 _thenable_ 均不相同，循环永远是正确的行为。

@@ -161,7 +161,6 @@ function reject(promise, value) {
 
   dispatch(promise);
 }
-
 ```
 
 ```js
@@ -252,6 +251,4 @@ function makeRequestCallFromTimer(callback) {
 }
 
 asap.makeRequestCallFromTimer = makeRequestCallFromTimer;
-
 ```
-

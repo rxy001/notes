@@ -12,7 +12,7 @@ function config(webpackEnv) {
     // 如 node es web
     // browserslist 从 browserslist-config 中推断出平台和 ES 特性
     target: ["browserslist"],
-     /*
+    /*
      * development 会将 DefinePlugin 中 process.env.NODE_ENV 的值设置为 development. 为模块和 chunk 	   * 启用有效的名。
      * production 设置环境变量为 production，为模块和 chunk 启用确定性的混淆名称。
      * FlagIncludedChunksPlugin 为当前块中包含的所有块添加块 id 。
@@ -115,7 +115,6 @@ function config(webpackEnv) {
   };
 }
 module.exports = config("development");
-
 ```
 
 ```js
@@ -173,6 +172,4 @@ module.exports = {
   swSrc: resolveModule(resolveApp, "src/service-worker"),
   // publicUrlOrPath,
 };
-
 ```
-

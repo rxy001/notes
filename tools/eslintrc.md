@@ -91,23 +91,22 @@ module.exports = {
 ```json
 //devDependencies
 {
-  	// ts rules
-   	"@typescript-eslint/eslint-plugin": "^5.38.0",
-  	// ts parser
-   	"@typescript-eslint/parser": "^5.38.0",
-   	"eslint": "^8.24.0",
-  	// js rules 包含 eslint, eslint-plugin-import, eslint-plugin-react, eslint-plugin-react-hooks, and eslint-plugin-jsx-a11y
-    "eslint-config-airbnb": "^19.0.4",
-  	// 禁用 eslint 于 prettier 冲突 ruels
-    "eslint-config-prettier": "^8.5.0",
-  	// ts import/export rules
-    "eslint-import-resolver-typescript": "^3.5.1",
-  	// js import/export rules
-    "eslint-plugin-import": "^2.26.0",
-  	// react rules
-    "eslint-plugin-react": "^7.31.8",
-  	// react/hooks rules
-    "eslint-plugin-react-hooks": "^4.6.0",
+  // ts rules
+  "@typescript-eslint/eslint-plugin": "^5.38.0",
+  // ts parser
+  "@typescript-eslint/parser": "^5.38.0",
+  "eslint": "^8.24.0",
+  // js rules 包含 eslint, eslint-plugin-import, eslint-plugin-react, eslint-plugin-react-hooks, and eslint-plugin-jsx-a11y
+  "eslint-config-airbnb": "^19.0.4",
+  // 禁用 eslint 于 prettier 冲突 ruels
+  "eslint-config-prettier": "^8.5.0",
+  // ts import/export rules
+  "eslint-import-resolver-typescript": "^3.5.1",
+  // js import/export rules
+  "eslint-plugin-import": "^2.26.0",
+  // react rules
+  "eslint-plugin-react": "^7.31.8",
+  // react/hooks rules
+  "eslint-plugin-react-hooks": "^4.6.0"
 }
 ```
-

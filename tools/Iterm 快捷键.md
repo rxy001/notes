@@ -6,7 +6,7 @@
 - 切换全屏：command + enter
 - 查找：command + f
 
-------
+---
 
 **分屏**
 
@@ -16,7 +16,7 @@
 - 查看历史命令：command + ;
 - 查看剪贴板历史：command + shift + h
 
-------
+---
 
 **其他**
 
@@ -31,6 +31,5 @@
 - 删除光标之前的单词：ctrl + w
 - 删除到文本末尾：ctrl + k
 - 交换光标处文本：ctrl + t
-- 清屏1：command + r
-- 清屏2：ctrl + l
-- 删除行：ctrl + u
+- 清屏 1：command + r
+- 清屏 2：ctrl + l

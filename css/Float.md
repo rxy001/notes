@@ -30,13 +30,10 @@
 
 2. 父元素添加 `overflow: auto` 或者其它除默认的 `overflow: visible` 以外的值（BFC）
 
-3. 
-
-   ```css
-   .clearfix::after { 
-      content: "";
-      display: block;
-      clear: both;
+3. ```css
+   .clearfix::after {
+     content: "";
+     display: block;
+     clear: both;
    }
    ```
-

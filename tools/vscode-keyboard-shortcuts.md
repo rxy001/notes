@@ -24,6 +24,6 @@
 >
 > ⌃K delete right all comment
 >
-> ⇧⌘↓  cursor bottom select
+> ⇧⌘↓ cursor bottom select
 >
-> ⇧⌥⌘↓  cursor Column Select Down
+> ⇧⌥⌘↓ cursor Column Select Down

@@ -18,13 +18,8 @@
 
 #### rebase vs merge
 
-`rebase vs merge `总的原则是，只对尚未推送或分享给别人的本地修改执行 `rebase` 清理历史， 从不对已推送至远程仓库特别是他人开发所基于的提交执行 `rebase` 操作。每次  `push` 之前都要先进行 `git pull --rebase remote/master`。
+`rebase vs merge `总的原则是，只对尚未推送或分享给别人的本地修改执行 `rebase` 清理历史， 从不对已推送至远程仓库特别是他人开发所基于的提交执行 `rebase` 操作。每次 `push` 之前都要先进行 `git pull --rebase remote/master`。
 
 在处理冲突时，由于 `rebase` 是将 commit 一个一个应用到目标分支，所以在产生冲突时，需要针对 commit 一个一个去解决，而 `merge` 是将 commit 的最终结果合并到目标分支，所以冲突只需要解决一次即可。
 
-
-
-参考:  [git book](https://git-scm.com/book/zh/v2)
-
-
-
+参考: [git book](https://git-scm.com/book/zh/v2)
